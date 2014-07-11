@@ -86,6 +86,8 @@ STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'creation.Writer'
 
+LOGIN_REDIRECT_URL = 'profile'
+
 try:
     from local_settings import *
 except ImportError:

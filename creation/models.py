@@ -11,13 +11,15 @@ class Writer(AbstractUser):
 
 class Branch(MPTTModel):
     title = models.CharField(max_length = 120)
-    mother = TreeForeignKey('self', null=True, blank=True, related_name='children')
-    history = []
+    parent = TreeForeignKey('self', null=True, blank=True, related_name='children')
     user = models.ForeignKey(Writer)
     text = models.TextField()
 
     class MPTTMeta:
         order_insertion_by = ['title']
+
+    def __unicode__(self):
+        return u"{}".format(self.title)
 
 class Vote(models.Model):
     writer_vote = models.ForeignKey(Writer)
