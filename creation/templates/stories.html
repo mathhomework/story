@@ -1,0 +1,16 @@
+{% load mptt_tags %}
+<ul>
+    {% recursetree nodes %}
+        <li>
+            <a href = "{% url "view_branch" node.id %}">{{ node.title }}</a>
+            {% if not node.is_leaf_node %}
+                <ul class = "children">
+                    {{ children }}
+                </ul>
+            {% endif %}
+        </li>
+    {% endrecursetree %}
+
+    <br>
+    {% full_tree_for_model creation.Branch as branches %}
+</ul>

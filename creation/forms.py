@@ -1,6 +1,5 @@
 __author__ = 'Andrew'
 
-
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from creation.models import *
@@ -25,3 +24,11 @@ class EmailUserCreationForm(UserCreationForm):
             self.error_messages['duplicate_username'],
             code='duplicate_username',
         )
+
+
+# class FlatPageForm(forms.ModelForm):
+#     content = forms.CharField(widget=TinyMCE(attrs={'cols':80, 'rows':30}))
+#
+#     class Meta:
+#         model = FlatPage
+

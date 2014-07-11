@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'creation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -37,8 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'south',
-    'creation',
     'mptt',
+    # 'django_wysiwyg',
+    # 'tinymce',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -85,8 +87,13 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'creation.Writer'
-
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'profile'
+
+# LOGOUT_URL = 'user_logout'
+
+# DJANGO_WYSIWYG_FLAVOR = "tinymce"    # or "tinymce_advanced"
+
 
 try:
     from local_settings import *

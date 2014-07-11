@@ -6,7 +6,21 @@
 </head>
 <body>
 
-<p>All thecoolthings.</p>
+<p>All thecoolthings.
+    <a href="{% url "stories" %}">View stories</a>
+    <span style="float:right;">
+        {% if user.is_authenticated %}
+            <a href="{% url 'profile' %}">{{ user.username }}</a>
+            {% if user.is_staff %}
+                <a href="{% url 'admin:index' %}">Admin</a> {# you can also use relativeurl href = "/admin #}
+            {% endif %}
+            <a href="{% url 'user_logout' %}">Logout</a>
+        {% else %}
+            <a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Register</a>
+        {% endif %}
+    </span>
+
+</p>
 {% block content %}{% endblock content %}
 
 </body>

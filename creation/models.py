@@ -5,6 +5,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 # Create your models here.
 
 
+
 class Writer(AbstractUser):
     pass
 
@@ -24,3 +25,4 @@ class Branch(MPTTModel):
 class Vote(models.Model):
     writer_vote = models.ForeignKey(Writer)
     branch_vote = models.ForeignKey(Branch)
+
