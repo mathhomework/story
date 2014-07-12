@@ -1,3 +1,5 @@
+from django.forms import ModelForm
+
 __author__ = 'Andrew'
 
 from django import forms
@@ -25,10 +27,7 @@ class EmailUserCreationForm(UserCreationForm):
             code='duplicate_username',
         )
 
-
-# class FlatPageForm(forms.ModelForm):
-#     content = forms.CharField(widget=TinyMCE(attrs={'cols':80, 'rows':30}))
-#
-#     class Meta:
-#         model = FlatPage
-
+class BranchForm(ModelForm):
+    # text = forms.TextField()
+    class Meta:
+        model = Branch

@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
+
 {% extends "base_template.html" %}
+{% load staticfiles %}
 
 <head lang="en">
     <meta charset="UTF-8">
-
+    <script type="text/javascript" src="{% static 'js/tinymce/tinymce.min.js' %}" ></script>
+    <script type = "text/javascript">
+        tinymce.init({
+            selector: "textarea"
+        });
+    </script>
     <title></title>
 </head>
 <body>
 {% block content %}
     {{ branch.title }}
-    {{ branch.text }}
+    <div>{{ branch.text|safe }}</div>
+
+    <form method = "post">
+        {% csrf_token %}
+
+        {{ form }}
+
+        <input value="Add new node" type="submit">
+{#        <textarea></textarea>#}
+    </form>
 {% endblock %}
 
 </body>

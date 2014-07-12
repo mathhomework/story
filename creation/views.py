@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
-from creation.forms import EmailUserCreationForm
+from creation.forms import EmailUserCreationForm, BranchForm
 from creation.models import *
 
 # Create your views here.
@@ -31,8 +31,17 @@ def register(request):
         'form': form
     })
 
+
 def view_branch(request, branch_id):
+    if request.method == "POST":
+        form = BranchForm(request.POST)
+        if form.is_valid():
+            if form.save():
+                return redirect("/stories")
+    else:
+        form = BranchForm()
     data = {
-        'branch': Branch.objects.get(id=branch_id)
+        'form': form,
+        'branch': Branch.objects.get(id=branch_id),
     }
     return render(request, "view_branch.html", data)

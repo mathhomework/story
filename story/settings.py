@@ -1,5 +1,5 @@
 """
-Django settings for story project.
+    Django settings for story project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -39,7 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'south',
     'mptt',
-    # 'django_wysiwyg',
     # 'tinymce',
 )
 
@@ -86,14 +85,17 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 AUTH_USER_MODEL = 'creation.Writer'
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'profile'
 
-# LOGOUT_URL = 'user_logout'
+PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, "static", *MEDIA_URL.strip("/").split("/"))
 
-# DJANGO_WYSIWYG_FLAVOR = "tinymce"    # or "tinymce_advanced"
-
+# TINYMCE_JS_URL = MEDIA_URL + 'js/tinymce/tinymce.min.js'
+# TINYMCE_JS_ROOT = os.path.join(PROJECT_ROOT, "static", "js", "tinymce", "tinymce.min.js")
 
 try:
     from local_settings import *
