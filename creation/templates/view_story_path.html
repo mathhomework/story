@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%  extends "base_template.html" %}
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+    {% block content%}
+    {% load mptt_tags %}
+    {{ branches|tree_path:">" }}
+
+    <h1>Break!</h1>
+
+    {% for branch in branches %}
+        <p>{{ branch.text|safe }}</p>
+        <hr>
+    <p><a href ="{% url 'view_branch' branch.id %}">Add to story</a></p>
+
+    {% endfor %}
+    {% endblock %}
+</body>
+</html>

@@ -2,7 +2,7 @@
 <ul>
     {% recursetree nodes %}
         <li>
-            <a href = "{% url "view_branch" node.id %}">{{ node.title }}</a>
+            <a href = "{% url "view_story_path" node.id %}">{{ node.title }}</a>
             {% if not node.is_leaf_node %}
                 <ul class = "children">
                     {{ children }}

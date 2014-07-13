@@ -1,4 +1,5 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, ModelChoiceField
+import mptt.forms
 
 __author__ = 'Andrew'
 
@@ -27,7 +28,19 @@ class EmailUserCreationForm(UserCreationForm):
             code='duplicate_username',
         )
 
-class BranchForm(ModelForm):
-    # text = forms.TextField()
-    class Meta:
-        model = Branch
+
+# class BranchForm(ModelForm):
+#     # text = forms.TextField()
+#     class Meta:
+#         model = Branch
+
+class BranchForm(forms.Form):
+    title = forms.CharField()
+    # parent = mptt.forms.TreeNodeChoiceField(queryset=Branch.objects.all())
+    # user = forms.ModelChoiceField(queryset=Writer.objects.all())
+    text = forms.CharField(widget=forms.Textarea)
+
+
+class VoteForm(forms.Form):
+    writer_vote = forms.ModelChoiceField(queryset=Writer.objects.all())
+    branch_vote = forms.ModelChoiceField(queryset=Branch.objects.all())

@@ -18,12 +18,16 @@
 {% block content %}
     {{ branch.title }}
     <div>{{ branch.text|safe }}</div>
-
+    <form method = "post">
+        {% csrf_token %}
+        {{ vote }}
+        <input value = "+" type ="submit">
+    </form>
+    <hr>
     <form method = "post">
         {% csrf_token %}
 
-        {{ form }}
-
+        {{ branch_form }}
         <input value="Add new node" type="submit">
 {#        <textarea></textarea>#}
     </form>

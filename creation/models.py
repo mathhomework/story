@@ -25,4 +25,5 @@ class Branch(MPTTModel):
 class Vote(models.Model):
     writer_vote = models.ForeignKey(Writer)
     branch_vote = models.ForeignKey(Branch)
+    vote = models.PositiveSmallIntegerField(null=True)
 

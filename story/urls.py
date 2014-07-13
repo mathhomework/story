@@ -15,6 +15,7 @@ urlpatterns = patterns('',
     url(r'^login/$', 'django.contrib.auth.views.login', name='login'),
     url(r'^user/logout/$', 'django.contrib.auth.views.logout', name='user_logout'),
     url(r'^stories/$', 'creation.views.stories', name='stories'),
+    url(r'^stories/story_path/(?P<branch_id>\w+)/$', 'creation.views.view_story_path', name='view_story_path'),
     url(r'^stories/(?P<branch_id>\w+)/$', 'creation.views.view_branch', name='view_branch'),
 
 
