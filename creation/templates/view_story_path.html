@@ -13,10 +13,12 @@
     <h1>Break!</h1>
 
     {% for branch in branches %}
-        <p>{{ branch.text|safe }}</p>
-        <hr>
-    <p><a href ="{% url 'view_branch' branch.id %}">Add to story</a></p>
 
+        <h4>{{ branch.title }}</h4>
+        <p>{{ branch.text|safe }}</p>
+        <p><a href ="{% url "view_branch" branch.id %}">Add to story</a></p>
+        <p><a href ="{% url "view_branch_vote" branch.id %}">Add vote</a> {{ branch.branch_votes.count }} votes</p>
+        <hr>
     {% endfor %}
     {% endblock %}
 </body>

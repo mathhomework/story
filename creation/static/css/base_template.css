@@ -1,0 +1,28 @@
+body {
+  padding-top: 50px;
+}
+.starter-template {
+  padding: 40px 15px;
+  text-align: center;
+}
+
+.navbar{
+    background-color:#BF7B39;
+    border-top-width:10px;
+    border-bottom-width: 10px;
+    border-color:#DF9F60;
+    border-top-color:#733A02;
+    color:#FFCB99
+}
+
+li.active a{
+    background-color:#9D5C1C;
+}
+
+.collapse navbar-collapse{
+    background-color:#ffff00;
+}
+
+.navbar nav{
+    background-color:gray;
+}

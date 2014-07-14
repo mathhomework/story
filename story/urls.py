@@ -17,6 +17,6 @@ urlpatterns = patterns('',
     url(r'^stories/$', 'creation.views.stories', name='stories'),
     url(r'^stories/story_path/(?P<branch_id>\w+)/$', 'creation.views.view_story_path', name='view_story_path'),
     url(r'^stories/(?P<branch_id>\w+)/$', 'creation.views.view_branch', name='view_branch'),
-
-
+    url(r'^leaderboard/$', 'creation.views.leaderboard', name='leaderboard'),
+    url(r'^stories/story_path/(?P<branch_id>\w+)/voted/$', 'creation.views.view_branch_vote', name='view_branch_vote'),
 )

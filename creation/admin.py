@@ -4,4 +4,9 @@ from creation.models import *
 
 admin.site.register(Writer)
 admin.site.register(Branch)
-admin.site.register(Vote)
+
+
+class VoteAdmin(admin.ModelAdmin):
+    list_display = ('writer_vote', 'branch_vote')
+
+admin.site.register(Vote, VoteAdmin)

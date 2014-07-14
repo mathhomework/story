@@ -42,5 +42,6 @@ class BranchForm(forms.Form):
 
 
 class VoteForm(forms.Form):
-    writer_vote = forms.ModelChoiceField(queryset=Writer.objects.all())
-    branch_vote = forms.ModelChoiceField(queryset=Branch.objects.all())
+    # writer_vote = forms.ModelChoiceField(queryset=Writer.objects.all())
+    # branch_vote = forms.ModelChoiceField(queryset=Branch.objects.all())
+    pass

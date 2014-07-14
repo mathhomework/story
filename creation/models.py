@@ -22,8 +22,8 @@ class Branch(MPTTModel):
     def __unicode__(self):
         return u"{}".format(self.title)
 
+
 class Vote(models.Model):
-    writer_vote = models.ForeignKey(Writer)
-    branch_vote = models.ForeignKey(Branch)
-    vote = models.PositiveSmallIntegerField(null=True)
+    writer_vote = models.ForeignKey(Writer, related_name='writer_votes')
+    branch_vote = models.ForeignKey(Branch, related_name='branch_votes')
 

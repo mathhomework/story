@@ -1,16 +1,29 @@
 {% load mptt_tags %}
-<ul>
-    {% recursetree nodes %}
-        <li>
-            <a href = "{% url "view_story_path" node.id %}">{{ node.title }}</a>
-            {% if not node.is_leaf_node %}
-                <ul class = "children">
-                    {{ children }}
-                </ul>
-            {% endif %}
-        </li>
-    {% endrecursetree %}
+<html>
+{% load staticfiles %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/stories_style.css' %}">
 
-    <br>
-    {% full_tree_for_model creation.Branch as branches %}
-</ul>
+</head>
+<body>
+    <div class="treeDiv">
+        <div class="tree">
+            <ul>
+                {% recursetree nodes %}
+                    <li>
+                        <a href = "{% url "view_story_path" node.id %}">{{ node.title }}</a>
+                        {% if not node.is_leaf_node %}
+                            <ul class = "children">
+                                {{ children }}
+                            </ul>
+                        {% endif %}
+                    </li>
+                {% endrecursetree %}
+
+                <br>
+                {% full_tree_for_model creation.Branch as branches %}
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

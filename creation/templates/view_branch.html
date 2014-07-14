@@ -18,11 +18,11 @@
 {% block content %}
     {{ branch.title }}
     <div>{{ branch.text|safe }}</div>
-    <form method = "post">
-        {% csrf_token %}
-        {{ vote }}
-        <input value = "+" type ="submit">
-    </form>
+{#    <form method = "post">#}
+{#        {% csrf_token %}#}
+{#        {{ vote }}#}
+{#        <input value = "+" type ="submit">#}
+{#    </form>#}
     <hr>
     <form method = "post">
         {% csrf_token %}
