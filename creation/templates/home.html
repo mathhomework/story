@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html>
 {% extends "base_template.html" %}
+{% load staticfiles %}
+{% block content %}
 <head lang="en">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
     <title></title>
 </head>
 <body>
-    {% block content %}
-    <h1>LANDING PAGE HOME</h1>
-    {% endblock content %}
+    <div class="banner">
+        <br><br><br>
+        <h1>Story of the Week!</h1>
+        <br><br><br>
+
+    </div>
+    <span class="stuff">
+        <p>Collaborative writing.</p>
+    </span>
+{#    <span class="stuff2">#}
+{#        <p>iesknksslsliowls</p>#}
+{#    </span>#}
+
 </body>
+{% endblock content %}
 </html>

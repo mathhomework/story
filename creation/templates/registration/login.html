@@ -1,12 +1,16 @@
 {% extends "base_template.html" %}
 {% block content %}
+    <div style="text-align:center">
+    <br> <br> <br>
+    <h1 style="font-size:100px;">enter</h1>
+    <br> <br> <br>
     <form method = "post" action = ".">
         {% csrf_token %}
         {{ form.as_p }}
-        <input type = "submit" value = "log in">
+        <input type = "submit" value = "Log in">
 
     </form>
-    <p> Register if you haven't already!
-        <a href = {% url 'register' %}>Register!</a>
-    </p>
+    <br>
+    <p> <a href = {% url 'register' %}>Register</a> if you haven't already!</p>
+    </div>
 {% endblock %}

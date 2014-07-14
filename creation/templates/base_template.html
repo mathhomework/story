@@ -16,11 +16,11 @@
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base_template.css' %}">
-    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Oxygen:300' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:white">
     <div class = "container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -53,7 +53,7 @@
         </div><!--/.nav-collapse -->
     </div>
 </div>
-    <p><span>All thecoolthings.</span>
+{#    <p><span>All thecoolthings.</span>#}
 
 {#        <span style="float:right;">#}
 {#            {% if user.is_authenticated %}#}
@@ -67,8 +67,8 @@
 {#            {% endif %}#}
 {#        </span>#}
 
-    </p>
-</div>
+{#    </p>#}
+{#</div>#}
 {% block content %}{% endblock content %}
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js">

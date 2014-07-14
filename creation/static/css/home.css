@@ -1,0 +1,19 @@
+.banner{
+    text-align:center;
+    padding: 50px;
+    background-color:#lightgray;
+
+}
+/*body{*/
+    /*background-image:url('http://payload292.cargocollective.com/1/4/141896/8149756/Buitenkant-schutblad03c_1024.jpg');*/
+/*}*/
+h1{
+    font-size:100px;
+}
+p{
+    font-size:20px;
+    color: black;
+    background-color:lightyellow;
+    text-align:center;
+
+}

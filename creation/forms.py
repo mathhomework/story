@@ -35,10 +35,10 @@ class EmailUserCreationForm(UserCreationForm):
 #         model = Branch
 
 class BranchForm(forms.Form):
-    title = forms.CharField()
+    title = forms.CharField(label = "Title ")
     # parent = mptt.forms.TreeNodeChoiceField(queryset=Branch.objects.all())
     # user = forms.ModelChoiceField(queryset=Writer.objects.all())
-    text = forms.CharField(widget=forms.Textarea)
+    text = forms.CharField(widget=forms.Textarea, label="")
 
 
 class VoteForm(forms.Form):

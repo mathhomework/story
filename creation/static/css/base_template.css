@@ -8,19 +8,19 @@ body {
   text-align: center;
 }
 
-.navbar{
-    background-color:#BF7B39;
+
+
+.container{
+    /*background-color:#BF7B39;*/
     border-top-width:10px;
     border-bottom-width: 10px;
     border-color:#DF9F60;
     font-size: 30px;
-    background-image: url('http://payload290.cargocollective.com/1/12/411773/8115284/000022_905.jpg');
     border-top-color:#733A02;
     /*color:#ffff00;*/
-}
-
-.container{
     color:#0044cc;
+    background-color:#7DFF7F;
+    /*background-image:url('http://www.hjs-consulting.com/s/cc_images/cache_11233183.jpg');*/
 }
 
 li.active a{
@@ -31,6 +31,3 @@ li.active a{
     background-color:#ffff00;
 }
 
-.navbar nav{
-    background-color:gray;
-}

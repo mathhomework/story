@@ -14,7 +14,7 @@ def stories(request):
 
 @login_required
 def profile(request):
-    return render(request, "profile.html")
+    return render(request, "home.html")
 
 def home(request):
     return render(request, "home.html")
