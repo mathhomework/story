@@ -16,6 +16,7 @@
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base_template.css' %}">
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
@@ -28,7 +29,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><em>Story of the Week</em></a>
+          <a class="navbar-brand" href="{% url 'home' %}"><strong><em>Story of the Week</em></strong></a>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav">

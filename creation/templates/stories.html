@@ -1,9 +1,11 @@
+{% extends "base_template.html" %}
+{% block content %}
 {% load mptt_tags %}
 <html>
 {% load staticfiles %}
 <head>
     <link rel="stylesheet" type="text/css" href="{% static 'css/stories_style.css' %}">
-
+    <link href='http://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div class="treeDiv">
@@ -27,3 +29,4 @@
     </div>
 </body>
 </html>
+{% endblock %}

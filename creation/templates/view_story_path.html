@@ -8,17 +8,18 @@
 <body>
     {% block content%}
     {% load mptt_tags %}
-    {{ branches|tree_path:">" }}
+    {{ branches|tree_path:" > " }}
 
     <h1>Break!</h1>
 
     {% for branch in branches %}
 
-        <h4>{{ branch.title }}</h4>
+        <h4 style="text-align:right;">{{ branch.title }}</h4>
         <p>{{ branch.text|safe }}</p>
-        <p><a href ="{% url "view_branch" branch.id %}">Add to story</a></p>
-        <p><a href ="{% url "view_branch_vote" branch.id %}">Add vote</a> {{ branch.branch_votes.count }} votes</p>
-        <hr>
+        <span style="text-align:center">
+            <p><a href ="{% url "view_branch" branch.id %}">Add to story</a> | <a href ="{% url "view_branch_vote" branch.id %}">Add vote</a> {{ branch.branch_votes.count }} votes</p>
+        </span>
+
     {% endfor %}
     {% endblock %}
 </body>

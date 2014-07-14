@@ -1,5 +1,7 @@
 body {
   padding-top: 50px;
+  font-family: 'Oxygen', serif;
+
 }
 .starter-template {
   padding: 40px 15px;
@@ -11,8 +13,14 @@ body {
     border-top-width:10px;
     border-bottom-width: 10px;
     border-color:#DF9F60;
+    font-size: 30px;
+    background-image: url('http://payload290.cargocollective.com/1/12/411773/8115284/000022_905.jpg');
     border-top-color:#733A02;
-    color:#FFCB99
+    /*color:#ffff00;*/
+}
+
+.container{
+    color:#0044cc;
 }
 
 li.active a{
